@@ -253,6 +253,7 @@ function hardMode(){
 	normal.style["box-shadow"] = "";
 	hard.style["box-shadow"] = "0 0 0 2px #165CF3";
 	clearInterval(animation);
+	dropSpeed = 0.5;
 	mode = 2;
 	delta = 0;
 	initCanvas();
