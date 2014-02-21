@@ -2,11 +2,50 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<title>Flappy Bird</title>
 	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="fb.min.js"></script>
 </head>
+<style>
+*{
+	cursor: pointer;
+}
+::selection{
+	background: transparent;
+}
+::-moz-selection{
+	background: transparent;
+}
+.option{
+	display: inline-block;
+	width: 70px;
+	height: 20px;
+	background: rgba(255, 255, 255, 0.6);
+	position: fixed;
+	top: 2px;
+	text-align: center;
+	font-size: 11px;
+	font-family: "Press Start 2P";
+	padding-top: 5px;
+}
+.option:hover{
+	background: #fff;
+}
+#easy{
+	left: 2px;
+}
+#normal{
+	left: 74px;
+}
+#hard{
+	left: 146px;
+}
+</style>
 <body style="padding:0;margin:0;outline:0;overflow:hidden">
 	<canvas id="canvas">你的浏览器太老了 =_=||</canvas>
+	<div id="easy" class="option" style="box-shadow:0 0 0 2px #165CF3">easy</div>
+	<div id="normal" class="option">normal</div>
+	<div id="hard" class="option">hard</div>
 </body>
 </html>

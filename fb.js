@@ -1,10 +1,12 @@
 var canvas, ctx;
-var width, height;
+var width, height, birdPos;
 var sky, land, bird, pipe, pipeUp, pipeDown, scoreBoard, ready, splash;
 var dist, birdY, birdF, birdN, birdV;
 var animation, death, deathAnim;
-var pipes = [], pipeSt, pipeNumber;
-var score;
+var pipes = [], pipesDir = [], pipeSt, pipeNumber;
+var score, maxScore;
+var dropSpeed;
+var mode, delta;
 
 var clearCanvas = function(){
 	ctx.fillStyle = '#4EC0CA';
@@ -22,12 +24,16 @@ var loadImages = function(){
 			birdF = 0;
 			birdN = 0;
 			birdV = 0;
+			birdPos = width * 0.35;
 			score = 0;
 			pipeSt = 0;
 			pipeNumber = 10;
 			pipes = [];
-			for(var i = 0; i < 10; ++i)
-				pipes.push(Math.floor(Math.random() * (height - 300) + 10));
+			pipesDir = [];
+			for(var i = 0; i < 10; ++i){
+				pipes.push(Math.floor(Math.random() * (height - 300 - delta) + 10));
+				pipesDir.push((Math.random() > 0.5));
+			}
 			drawCanvas();
 		}
 	}
@@ -57,7 +63,7 @@ var loadImages = function(){
 	pipeDown.onload = onImgLoad;
 	
 	scoreBoard = new Image();
-	scoreBoard.src = 'images/scoreBoard.png';
+	scoreBoard.src = 'images/scoreboard.png';
 	scoreBoard.onload = onImgLoad;
 	
 	ready = new Image();
@@ -87,6 +93,7 @@ var deathAnimation = function(){
 	else
 		ctx.drawImage(scoreBoard, width / 2 - 118, height / 2 - 54);
 	ctx.drawImage(ready, width / 2 - 57, height / 2 + 10);
+	maxScore = Math.max(maxScore, score);
 }
 
 var drawSky = function(){
@@ -104,7 +111,8 @@ var drawLand = function(){
 		totWidth += land.width;
 	}
 	dist = dist + 2;
-	if(dist >= width * 0.65 && Math.floor(dist - width * 0.65) % 220 == 0){
+	var tmp = Math.floor(dist - width * 0.65) % 220;
+	if(dist >= width * 0.65 && Math.abs(tmp) <= 1){
 		score++;
 	}
 }
@@ -112,16 +120,17 @@ var drawLand = function(){
 var drawPipe = function(x, y){
 	ctx.drawImage(pipe, x, 0, pipe.width, y);
 	ctx.drawImage(pipeDown, x, y);
-	ctx.drawImage(pipe, x, y + 168, pipe.width, height - 112);
-	ctx.drawImage(pipeUp, x, y + 144);
-	if(x < width * 0.35 + 34 && x + 52 > width * 0.35 && (birdY < y + 24 || birdY + 24 > y + 144)){
+	ctx.drawImage(pipe, x, y + 168 + delta, pipe.width, height - 112);
+	ctx.drawImage(pipeUp, x, y + 144 + delta);
+	if(x < birdPos + 34 && x + 52 > birdPos && (birdY < y + 24 || birdY + 24 > y + 144 + delta)){
 		clearInterval(animation);
 		death = 1;
 	}
 	else if(x + 40 < 0){
 		pipeSt++;
 		pipeNumber++;
-		pipes.push(Math.floor(Math.random() * (height - 300) + 10));
+		pipes.push(Math.floor(Math.random() * (height - 300 - delta) + 10));
+		pipesDir.push((Math.random() > 0.5));
 	}
 	
 }
@@ -130,14 +139,14 @@ var drawBird = function(){
 //	ctx.translate(width * 0.35 + 17, birdY + 12);
 //	var deg = -Math.atan(birdV / 2) / 3.14159;
 //	ctx.rotate(deg);
-	ctx.drawImage(bird, 0, birdN * 24, bird.width, bird.height / 4, width * 0.35, birdY, bird.width, bird.height / 4);
+	ctx.drawImage(bird, 0, birdN * 24, bird.width, bird.height / 4, birdPos, birdY, bird.width, bird.height / 4);
 //	ctx.rotate(-deg);
 //	ctx.translate(-width * 0.35 - 17, -birdY - 12);
 	birdF = (birdF + 1) % 6;
 	if(birdF % 6 == 0)
 		birdN = (birdN + 1) % 4;
 	birdY -= birdV;
-	birdV -= 0.5;
+	birdV -= dropSpeed;
 	if(birdY + 138 > height){
 		clearInterval(animation);
 		death = 1;
@@ -159,8 +168,27 @@ var drawScore = function(){
 var drawCanvas = function(){
 	clearCanvas();
 	drawSky();
-	for(var i = pipeSt; i < pipeNumber; ++i)
+	for(var i = pipeSt; i < pipeNumber; ++i){
 		drawPipe(width - dist + i * 220, pipes[i]);
+		if(mode == 2){
+			if(pipesDir[i]){
+				if(pipes[i] + 1 > height - 300){
+					pipesDir[i] = !pipesDir[i];
+					pipes[i] -= 1;
+				}
+				else
+					pipes[i] += 1;
+			}
+			else{
+				if(pipes[i] - 1 < 10){
+					pipesDir[i] = !pipesDir[i];
+					pipes[i] += 1;
+				}
+				else
+					pipes[i] -= 1;
+			}
+		}
+	}
 	drawLand();
 	drawBird();
 	drawScore();
@@ -179,16 +207,64 @@ var jump = function(){
 		birdV = 0;
 		death = 0;
 		score = 0;
+		birdPos = width * 0.35;
 		pipeSt = 0;
 		pipeNumber = 10;
 		pipes = [];
-		for(var i = 0; i < 10; ++i)
-			pipes.push(Math.floor(Math.random() * (height - 300) + 10));
+		pipesDir = [];
+		for(var i = 0; i < 10; ++i){
+			pipes.push(Math.floor(Math.random() * (height - 300 - delta) + 10));
+			pipesDir.push((Math.random() > 0.5));
+		}
 		anim();
 	}
-	birdV = 8;
+	if(mode == 0)
+		birdV = 6;
+	else 
+		birdV = 8;
+}
+
+var easy, normal, hard;
+
+function easyMode(){
+	easy.style["box-shadow"] = "0 0 0 2px #165CF3";
+	normal.style["box-shadow"] = "";
+	hard.style["box-shadow"] = "";
+	clearInterval(animation);
+	dropSpeed = 0.3;
+	mode = 0;
+	delta = 100;
+	initCanvas();
+}
+
+function normalMode(){
+	easy.style["box-shadow"] = "";
+	normal.style["box-shadow"] = "0 0 0 2px #165CF3";
+	hard.style["box-shadow"] = "";
+	clearInterval(animation);
+	dropSpeed = 0.5;
+	mode = 1;
+	delta = 0;
+	initCanvas();
+}
+
+function hardMode(){
+	easy.style["box-shadow"] = "";
+	normal.style["box-shadow"] = "";
+	hard.style["box-shadow"] = "0 0 0 2px #165CF3";
+	clearInterval(animation);
+	mode = 2;
+	delta = 0;
+	initCanvas();
 }
 
 window.onload = function(){
+	maxScore = 0;
+	dropSpeed = 0.3;
+	mode = 0;
+	delta = 100;
 	initCanvas();
+	easy = document.getElementById("easy"); easy.onclick = easyMode;
+	normal = document.getElementById("normal"); normal.onclick = normalMode;
+	hard = document.getElementById("hard"); hard.onclick = hardMode;
 }
