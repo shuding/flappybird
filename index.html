@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>Flappy Bird</title>
 	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="fb.min.js"></script>
+	<script type='application/javascript' src="fastclick.js"></script>
+	<script type="application/javascript" src="fb.min.js"></script>
 </head>
 <style>
 *{
 	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 ::selection{
 	background: transparent;

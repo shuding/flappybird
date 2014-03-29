@@ -75,13 +75,31 @@ var loadImages = function(){
 	splash.onload = onImgLoad;
 }
 
+function is_touch_device() {  
+  try {  
+    document.createEvent("TouchEvent");  
+    return true;  
+  } catch (e) {  
+    return false;  
+  }  
+}
+
 var initCanvas = function(){
 	canvas = document.getElementById("canvas");
 	ctx = canvas.getContext('2d');
 	canvas.width = width = window.innerWidth;
 	canvas.height = height = window.innerHeight;
-	canvas.onclick = jump;
+	if(is_touch_device()){
+		canvas.addEventListener("touchend", function(e) { e.preventDefault(); }, false);
+        canvas.addEventListener("touchstart", function(e) {
+	        	jump();
+            e.preventDefault();
+        }, false);
+	}
+	else
+		canvas.onmousedown = jump;
 	window.onkeydown = jump;
+	FastClick.attach(canvas);
 	loadImages();
 }
 
@@ -220,8 +238,10 @@ var jump = function(){
 	}
 	if(mode == 0)
 		birdV = 6;
-	else 
-		birdV = 8;
+	else if(mode == 1)
+		birdV = 6;
+	else
+		birdV = 6;
 }
 
 var easy, normal, hard;
@@ -242,7 +262,7 @@ function normalMode(){
 	normal.style["box-shadow"] = "0 0 0 2px #165CF3";
 	hard.style["box-shadow"] = "";
 	clearInterval(animation);
-	dropSpeed = 0.5;
+	dropSpeed = 0.3;
 	mode = 1;
 	delta = 0;
 	initCanvas();
@@ -253,7 +273,7 @@ function hardMode(){
 	normal.style["box-shadow"] = "";
 	hard.style["box-shadow"] = "0 0 0 2px #165CF3";
 	clearInterval(animation);
-	dropSpeed = 0.5;
+	dropSpeed = 0.3;
 	mode = 2;
 	delta = 0;
 	initCanvas();
