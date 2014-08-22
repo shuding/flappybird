@@ -279,6 +279,13 @@ function hardMode(){
 	initCanvas();
 }
 
+function flashlight(){
+	document.getElementById("flashlight_layer").style.display
+	 = (document.getElementById("flashlight_layer").style.display == "none" ? "inherit" : "none");
+	document.getElementById("flashlight").style.background
+	 = (document.getElementById("flashlight").style.background == "red" ? "rgba(255, 255, 255, 0.6)" : "red");
+}
+
 window.onload = function(){
 	maxScore = 0;
 	dropSpeed = 0.3;
@@ -288,4 +295,10 @@ window.onload = function(){
 	easy = document.getElementById("easy"); easy.onclick = easyMode;
 	normal = document.getElementById("normal"); normal.onclick = normalMode;
 	hard = document.getElementById("hard"); hard.onclick = hardMode;
+	document.getElementById("flashlight_layer").onclick = jump;
+	var left_shadow = "linear, " + ((width * 0.35 - 170) / width * 100.) + "% 0, " + ((width * 0.35 + 60) / width * 100.) + "% 0, from(black), to(rgba(0,0,0,0))";
+	var right_shadow = "linear, " + ((width * 0.35 + 190) / width * 100.) + "% 0, " + ((width * 0.35 - 30) / width * 100.) + "% 0, from(black), to(rgba(0,0,0,0))";
+	document.getElementById("flashlight_layer").style.background = "-webkit-gradient(" + left_shadow + "), -webkit-gradient(" + right_shadow + ")";
+	document.getElementById("flashlight_layer").style.display = "none";
+	document.getElementById("flashlight").onclick = flashlight;
 }
