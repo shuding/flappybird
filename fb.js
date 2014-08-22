@@ -6,6 +6,7 @@ var animation, death, deathAnim;
 var pipes = [], pipesDir = [], pipeSt, pipeNumber;
 var score, maxScore;
 var dropSpeed;
+var flashlight_switch = false, hidden_switch = false;
 var mode, delta;
 
 var clearCanvas = function(){
@@ -183,6 +184,30 @@ var drawScore = function(){
 	ctx.fillText(txt, (width - ctx.measureText(txt).width) / 2, height * 0.15);
 }
 
+var drawShadow = function() {
+	var left_shadow = "linear, " + ((width * 0.35 - 170) / width * 100.) + "% 0, " + ((width * 0.35 + 60) / width * 100.) + "% 0, from(black), to(rgba(0,0,0,0))";
+	var right_shadow = "linear, " + ((width * 0.35 + 190) / width * 100.) + "% 0, " + ((width * 0.35 - 30) / width * 100.) + "% 0, from(black), to(rgba(0,0,0,0))";
+	var grd = ctx.createLinearGradient(width * 0.35 - 170, 0, width * 0.35 + 60, 0);
+	grd.addColorStop(0, "black");
+	grd.addColorStop(1, "rgba(0, 0, 0, 0)");
+	ctx.fillStyle = grd;
+	ctx.fillRect((width * 0.35 - 170), 0, 230, height);
+	ctx.fillStyle = "black";
+	ctx.fillRect(0, 0, (width * 0.35 - 170), height);
+	grd = ctx.createLinearGradient(width * 0.35 - 30, 0, width * 0.35 + 190, 0);
+	grd.addColorStop(0, "rgba(0, 0, 0, 0)");
+	grd.addColorStop(1, "black");
+	ctx.fillStyle = grd;
+	ctx.fillRect((width * 0.35 - 30), 0, 220, height);
+	ctx.fillStyle = "black";
+	ctx.fillRect(width * 0.35 + 190, 0, width * 0.65 - 190, height);
+}
+
+var drawHidden = function() {
+	ctx.fillStyle = "black";
+	ctx.fillRect(width * 0.35, 30, 300, height - 180);
+}
+
 var drawCanvas = function(){
 	clearCanvas();
 	drawSky();
@@ -208,6 +233,10 @@ var drawCanvas = function(){
 		}
 	}
 	drawLand();
+	if(flashlight_switch)
+		drawShadow();
+	else if(hidden_switch)
+		drawHidden();
 	drawBird();
 	drawScore();
 }
@@ -280,10 +309,13 @@ function hardMode(){
 }
 
 function flashlight(){
-	document.getElementById("flashlight_layer").style.display
-	 = (document.getElementById("flashlight_layer").style.display == "none" ? "inherit" : "none");
-	document.getElementById("flashlight").style.background
-	 = (document.getElementById("flashlight").style.background == "red" ? "rgba(255, 255, 255, 0.6)" : "red");
+	document.getElementById("flashlight").style.background = ["red", "rgba(255, 255, 255, 0.6)"][+flashlight_switch];
+	flashlight_switch ^= 1;
+}
+
+function hidden(){
+	document.getElementById("hidden").style.background = ["red", "rgba(255, 255, 255, 0.6)"][+hidden_switch];
+	hidden_switch ^= 1;
 }
 
 window.onload = function(){
@@ -295,10 +327,11 @@ window.onload = function(){
 	easy = document.getElementById("easy"); easy.onclick = easyMode;
 	normal = document.getElementById("normal"); normal.onclick = normalMode;
 	hard = document.getElementById("hard"); hard.onclick = hardMode;
-	document.getElementById("flashlight_layer").onclick = jump;
-	var left_shadow = "linear, " + ((width * 0.35 - 170) / width * 100.) + "% 0, " + ((width * 0.35 + 60) / width * 100.) + "% 0, from(black), to(rgba(0,0,0,0))";
-	var right_shadow = "linear, " + ((width * 0.35 + 190) / width * 100.) + "% 0, " + ((width * 0.35 - 30) / width * 100.) + "% 0, from(black), to(rgba(0,0,0,0))";
-	document.getElementById("flashlight_layer").style.background = "-webkit-gradient(" + left_shadow + "), -webkit-gradient(" + right_shadow + ")";
-	document.getElementById("flashlight_layer").style.display = "none";
 	document.getElementById("flashlight").onclick = flashlight;
+	document.getElementById("hidden").onclick = hidden;
+	window.onresize = function() {
+		canvas.width = width = window.innerWidth;
+		canvas.height = height = window.innerHeight;
+		drawCanvas();
+	}
 }
