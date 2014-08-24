@@ -3,7 +3,7 @@ FlappyBird
 
 Flappy Bird game in browser. PC / Touch-screen device supported.
 
-shud.in/flappybird
+http://shud.in/flappybird
 
 ----
 
