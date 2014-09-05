@@ -115,6 +115,8 @@ var deathAnimation = function(){
         ctx.drawImage(scoreBoard, width / 2 - 118, height / 2 - 54);
         if(window.window.WeixinApi && window.WeixinJSBridge) {
             alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
+            playend = true;
+            playdata = [mode, score];
         }
     }
 	ctx.drawImage(ready, width / 2 - 57, height / 2 + 10);
@@ -253,8 +255,6 @@ var anim = function(){
 
 var jump = function(){
 	if(death){
-        playend = true;
-        playdata = [mode, score];
 		dist = 0;
 		birdY = (height - 112) / 2;
 		birdF = 0;
