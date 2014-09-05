@@ -3,6 +3,8 @@ FlappyBird
 
 Flappy Bird game in browser. PC / Touch-screen device supported.
 
+(2014.9.5) WeChat share API added.
+
 http://shud.in/flappybird
 
 ----
