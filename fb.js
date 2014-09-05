@@ -114,9 +114,9 @@ var deathAnimation = function(){
 	}
 	else {
         ctx.drawImage(scoreBoard, width / 2 - 118, height / 2 - 54);
+        playend = true;
+        playdata = [mode, score];
         if(window.window.WeixinApi && window.WeixinJSBridge) {
-            playend = true;
-            playdata = [mode, score];
             alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
         }
     }
@@ -340,6 +340,10 @@ window.onload = function(){
                 "desc" : 'Easy / Normal / Hard 三种难度, Flappy Bird 网页版',
                 "title" : "Flappy Bird"
             };
+
+            if(playend) {
+                wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
+            }
 
             var wxCallbacks = {
                 // 分享操作开始之前
