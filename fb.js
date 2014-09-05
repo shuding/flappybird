@@ -350,7 +350,7 @@ window.onload = function(){
                 ready : function() {
                     wxData["title"] = 'Flappy Bird';
                     if(flashlight_switch)
-                        wxData["desc"] = '我刚刚开启 flashlight, 在' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分, 你也来试试吧！';
+                        wxData["desc"] = '我刚刚开启 flashlight, 在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分, 你也来试试吧！';
                     else
                         wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分, 你也来试试吧！';
                 },
