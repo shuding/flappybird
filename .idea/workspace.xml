@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b9ba39f-28c7-4291-acc7-e56b40cc9770" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fb.js" afterPath="$PROJECT_DIR$/fb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FlappyBird.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +42,8 @@
       <file leaf-file-name="fb.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6433878" vertical-offset="6487" max-vertical-offset="7960">
-              <caret line="346" column="20" selection-start-line="346" selection-start-column="20" selection-end-line="346" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.70282316" vertical-offset="7267" max-vertical-offset="8020">
+              <caret line="387" column="45" selection-start-line="387" selection-start-column="45" selection-end-line="387" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -262,8 +263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6433878" vertical-offset="6487" max-vertical-offset="7960">
-          <caret line="346" column="20" selection-start-line="346" selection-start-column="20" selection-end-line="346" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.70282316" vertical-offset="7267" max-vertical-offset="8020">
+          <caret line="387" column="45" selection-start-line="387" selection-start-column="45" selection-end-line="387" selection-end-column="45" />
           <folding />
         </state>
       </provider>

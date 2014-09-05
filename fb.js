@@ -380,9 +380,12 @@ window.onload = function(){
 	mode = 0;
 	delta = 100;
 	initCanvas();
-	easy = document.getElementById("easy"); easy.onclick = easyMode;
-	normal = document.getElementById("normal"); normal.onclick = normalMode;
-	hard = document.getElementById("hard"); hard.onclick = hardMode;
+	easy = document.getElementById("easy");
+    easy.addEventListener("click", easyMode);
+	normal = document.getElementById("normal");
+    normal.addEventListener("click", normalMode);
+	hard = document.getElementById("hard");
+    hard.addEventListener("click", hardMode);
 	//document.getElementById("flashlight").onclick = flashlight;
 	//document.getElementById("hidden").onclick = hidden;
 	window.onresize = function() {
