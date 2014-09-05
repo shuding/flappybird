@@ -111,8 +111,12 @@ var deathAnimation = function(){
 		ctx.drawImage(splash, width / 2 - 94, height / 2 - 54);
 		splash = undefined;
 	}
-	else
-		ctx.drawImage(scoreBoard, width / 2 - 118, height / 2 - 54);
+	else {
+        ctx.drawImage(scoreBoard, width / 2 - 118, height / 2 - 54);
+        if (wechat) {
+            alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
+        }
+    }
 	ctx.drawImage(ready, width / 2 - 57, height / 2 + 10);
 	maxScore = Math.max(maxScore, score);
 }
@@ -251,9 +255,6 @@ var jump = function(){
 	if(death){
         playend = true;
         playdata = [mode, score];
-        if (wechat) {
-            alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
-        }
 		dist = 0;
 		birdY = (height - 112) / 2;
 		birdF = 0;
