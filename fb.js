@@ -344,9 +344,7 @@ window.onload = function(){
             var wxCallbacks = {
                 // 分享操作开始之前
                 ready : function() {
-                    if(playend) {
-                        wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
-                    }
+                    wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
                 },
                 // 分享被用户自动取消
                 cancel : function(resp) {
