@@ -337,23 +337,14 @@ window.onload = function(){
                 "appId": "",
                 "imgUrl" : 'http://shud.in/flappybird/images/logo.png',
                 "link" : 'http://shud.in/flappybird',
-                "desc" : 'Easy / Normal / Hard 三种难度, Flappy Bird 网页版',
+                "desc" : '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！',
                 "title" : "Flappy Bird"
             };
 
             var wxCallbacks = {
                 // 分享操作开始之前
-                async : true,
                 ready : function() {
-                    var wxData = {
-                        "appId": "",
-                        "imgUrl" : 'http://shud.in/flappybird/images/logo.png',
-                        "link" : 'http://shud.in/flappybird',
-                        "desc" : 'Easy / Normal / Hard 三种难度, Flappy Bird 网页版',
-                        "title" : "Flappy Bird"
-                    };
                     wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
-                    self.dataLoaded(wxData);
                 },
                 // 分享被用户自动取消
                 cancel : function(resp) {
