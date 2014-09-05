@@ -337,7 +337,10 @@ window.onload = function(){
 
             wxData = {
                 "appId": "",
+                "img_url" : 'http://shud.in/flappybird/images/logo.png',
                 "imgUrl" : 'http://shud.in/flappybird/images/logo.png',
+                "img_width": '200',
+                "img_height": '200',
                 "link" : 'http://shud.in/flappybird',
                 "desc" : 'Easy / Normal / Hard 三种难度, Flappy Bird 网页版',
                 "title" : "Flappy Bird"
@@ -346,7 +349,7 @@ window.onload = function(){
             var wxCallbacks = {
                 // 分享操作开始之前
                 ready : function() {
-                    wxData["title"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
+                    wxData["title"] = 'Flappy Bird';
                     wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
                 },
                 // 分享被用户自动取消
