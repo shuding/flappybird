@@ -327,7 +327,7 @@ function hidden(){
 }
 
 window.onload = function(){
-    document.addEventListener("touchend", function(e) { e.preventDefault(); }, false);
+    //document.addEventListener("touchend", function(e) { e.preventDefault(); }, false);
     if(window.window.WeixinApi && window.WeixinJSBridge) {
         wechat = true;
 
@@ -381,11 +381,11 @@ window.onload = function(){
 	delta = 100;
 	initCanvas();
 	easy = document.getElementById("easy");
-    easy.addEventListener("touchstart", easyMode);
+    easy.onclick = easyMode;
 	normal = document.getElementById("normal");
-    normal.addEventListener("touchstart", normalMode);
+    normal.onclick = normalMode;
 	hard = document.getElementById("hard");
-    hard.addEventListener("touchstart", hardMode);
+    hard.onclick = hardMode;
 	//document.getElementById("flashlight").onclick = flashlight;
 	//document.getElementById("hidden").onclick = hidden;
 	window.onresize = function() {

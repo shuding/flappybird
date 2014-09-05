@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b9ba39f-28c7-4291-acc7-e56b40cc9770" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fb.js" afterPath="$PROJECT_DIR$/fb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="FlappyBird.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.965517" vertical-offset="220" max-vertical-offset="1840">
-              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.8695652" vertical-offset="700" max-vertical-offset="1900">
+              <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -38,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fb.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="fb.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6731055" vertical-offset="7287" max-vertical-offset="8020">
-              <caret line="387" column="50" selection-start-line="387" selection-start-column="50" selection-end-line="387" selection-end-column="50" />
+            <state vertical-scroll-proportion="-8.192307" vertical-offset="6367" max-vertical-offset="8020">
+              <caret line="329" column="88" selection-start-line="329" selection-start-column="88" selection-end-line="329" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -82,8 +83,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/fb.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -249,22 +250,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.192307" vertical-offset="6367" max-vertical-offset="8020">
+          <caret line="329" column="88" selection-start-line="329" selection-start-column="88" selection-end-line="329" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.965517" vertical-offset="220" max-vertical-offset="1840">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.8695652" vertical-offset="700" max-vertical-offset="1900">
+          <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6731055" vertical-offset="7287" max-vertical-offset="8020">
-          <caret line="387" column="50" selection-start-line="387" selection-start-column="50" selection-end-line="387" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
