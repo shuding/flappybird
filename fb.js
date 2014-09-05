@@ -114,9 +114,9 @@ var deathAnimation = function(){
 	else {
         ctx.drawImage(scoreBoard, width / 2 - 118, height / 2 - 54);
         if(window.window.WeixinApi && window.WeixinJSBridge) {
-            alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
             playend = true;
             playdata = [mode, score];
+            alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
         }
     }
 	ctx.drawImage(ready, width / 2 - 57, height / 2 + 10);
@@ -327,6 +327,7 @@ function hidden(){
 }
 
 window.onload = function(){
+    document.addEventListener("touchend", function(e) { e.preventDefault(); }, false);
     if(window.window.WeixinApi && window.WeixinJSBridge) {
         wechat = true;
 

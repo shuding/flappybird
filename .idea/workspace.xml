@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b9ba39f-28c7-4291-acc7-e56b40cc9770" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fb.js" afterPath="$PROJECT_DIR$/fb.js" />
     </list>
     <ignored path="FlappyBird.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +41,8 @@
       <file leaf-file-name="fb.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48142645" vertical-offset="1616" max-vertical-offset="7980">
-              <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.52451706" vertical-offset="6227" max-vertical-offset="8000">
+              <caret line="329" column="86" selection-start-line="329" selection-start-column="86" selection-end-line="329" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -81,9 +81,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/fb.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/fb.js" />
       </list>
     </option>
   </component>
@@ -262,8 +262,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48142645" vertical-offset="1616" max-vertical-offset="7980">
-          <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.52451706" vertical-offset="6227" max-vertical-offset="8000">
+          <caret line="329" column="86" selection-start-line="329" selection-start-column="86" selection-end-line="329" selection-end-column="86" />
           <folding />
         </state>
       </provider>
