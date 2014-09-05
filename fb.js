@@ -113,10 +113,9 @@ var deathAnimation = function(){
 	}
 	else {
         ctx.drawImage(scoreBoard, width / 2 - 118, height / 2 - 54);
-        if (wechat) {
-            alert(mode);
-            alert(score);
-            //alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
+        alert(wechat);
+        if(wechat) {
+            alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
         }
     }
 	ctx.drawImage(ready, width / 2 - 57, height / 2 + 10);
@@ -335,7 +334,7 @@ window.onload = function(){
         WeixinApi.ready(function(Api) {
 
             var wxData = {
-                "appId": "", // 服务号可以填写appId
+                "appId": "",
                 "imgUrl" : 'http://shud.in/flappybird/images/logo.png',
                 "link" : 'http://shud.in/flappybird',
                 "desc" : 'Easy / Normal / Hard 三种难度, Flappy Bird 网页版',
@@ -386,8 +385,8 @@ window.onload = function(){
 	easy = document.getElementById("easy"); easy.onclick = easyMode;
 	normal = document.getElementById("normal"); normal.onclick = normalMode;
 	hard = document.getElementById("hard"); hard.onclick = hardMode;
-	document.getElementById("flashlight").onclick = flashlight;
-	document.getElementById("hidden").onclick = hidden;
+	//document.getElementById("flashlight").onclick = flashlight;
+	//document.getElementById("hidden").onclick = hidden;
 	window.onresize = function() {
 		canvas.width = width = window.innerWidth;
 		canvas.height = height = window.innerHeight;
