@@ -349,7 +349,10 @@ window.onload = function(){
             var wxCallbacks = {
                 ready : function() {
                     wxData["title"] = 'Flappy Bird';
-                    wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
+                    if(flashlight_switch)
+                        wxData["desc"] = '我刚刚开启 flashlight, 在' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分, 你也来试试吧！';
+                    else
+                        wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分, 你也来试试吧！';
                 },
                 cancel : function(resp) {
                 },
@@ -387,7 +390,7 @@ window.onload = function(){
     normal.onclick = normalMode;
 	hard = document.getElementById("hard");
     hard.onclick = hardMode;
-	//document.getElementById("flashlight").onclick = flashlight;
+	document.getElementById("flashlight").onclick = flashlight;
 	//document.getElementById("hidden").onclick = hidden;
 	window.onresize = function() {
 		canvas.width = width = window.innerWidth;
