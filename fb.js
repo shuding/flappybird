@@ -251,7 +251,7 @@ var jump = function(){
 	if(death){
         playend = true;
         playdata = [mode, score];
-        if(wechat) {
+        if (wechat) {
             alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
         }
 		dist = 0;
