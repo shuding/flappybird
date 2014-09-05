@@ -329,6 +329,8 @@ function hidden(){
 
 window.onload = function(){
     //document.addEventListener("touchend", function(e) { e.preventDefault(); }, false);
+    mode = 0;
+    score = 0;
     if(window.window.WeixinApi && window.WeixinJSBridge) {
         wechat = true;
         WeixinApi.ready(function(Api) {
@@ -341,13 +343,10 @@ window.onload = function(){
                 "title" : "Flappy Bird"
             };
 
-            if(playend) {
-                wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
-            }
-
             var wxCallbacks = {
                 // 分享操作开始之前
                 ready : function() {
+                    wxData["title"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
                     wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
                 },
                 // 分享被用户自动取消
