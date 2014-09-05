@@ -113,8 +113,7 @@ var deathAnimation = function(){
 	}
 	else {
         ctx.drawImage(scoreBoard, width / 2 - 118, height / 2 - 54);
-        alert([window.window.WeixinApi , window.WeixinJSBridge]);
-        if(wechat) {
+        if(window.window.WeixinApi && window.WeixinJSBridge) {
             alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
         }
     }
