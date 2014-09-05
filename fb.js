@@ -381,11 +381,11 @@ window.onload = function(){
 	delta = 100;
 	initCanvas();
 	easy = document.getElementById("easy");
-    easy.addEventListener("click", easyMode);
+    easy.addEventListener("touchstart", easyMode);
 	normal = document.getElementById("normal");
-    normal.addEventListener("click", normalMode);
+    normal.addEventListener("touchstart", normalMode);
 	hard = document.getElementById("hard");
-    hard.addEventListener("click", hardMode);
+    hard.addEventListener("touchstart", hardMode);
 	//document.getElementById("flashlight").onclick = flashlight;
 	//document.getElementById("hidden").onclick = hidden;
 	window.onresize = function() {
