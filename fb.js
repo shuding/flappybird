@@ -10,6 +10,7 @@ var flashlight_switch = false, hidden_switch = false;
 var mode, delta;
 var wechat = false;
 var playend = false, playdata = [];
+var wxData;
 
 var clearCanvas = function(){
 	ctx.fillStyle = '#4EC0CA';
@@ -332,7 +333,7 @@ window.onload = function(){
         wechat = true;
         WeixinApi.ready(function(Api) {
 
-            var wxData = {
+            wxData = {
                 "appId": "",
                 "imgUrl" : 'http://shud.in/flappybird/images/logo.png',
                 "link" : 'http://shud.in/flappybird',
@@ -343,7 +344,6 @@ window.onload = function(){
             var wxCallbacks = {
                 // 分享操作开始之前
                 ready : function() {
-                    alert(playdata);
                     wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
                 },
                 // 分享被用户自动取消
