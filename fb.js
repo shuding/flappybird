@@ -117,7 +117,7 @@ var deathAnimation = function(){
         playend = true;
         playdata = [mode, score];
         if(window.window.WeixinApi && window.WeixinJSBridge) {
-            alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
+            //alert("您在 " + ["easy", "normal", "hard"][mode] + " 模式中取得 " + score + " 分，右上角分享成绩到朋友圈吧~");
         }
     }
 	ctx.drawImage(ready, width / 2 - 57, height / 2 + 10);

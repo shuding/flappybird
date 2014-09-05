@@ -41,8 +41,8 @@
       <file leaf-file-name="fb.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73254085" vertical-offset="6527" max-vertical-offset="8040">
-              <caret line="351" column="20" selection-start-line="351" selection-start-column="20" selection-end-line="351" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.346211" vertical-offset="2147" max-vertical-offset="8040">
+              <caret line="119" column="103" selection-start-line="119" selection-start-column="103" selection-end-line="119" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -262,8 +262,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73254085" vertical-offset="6527" max-vertical-offset="8040">
-          <caret line="351" column="20" selection-start-line="351" selection-start-column="20" selection-end-line="351" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.346211" vertical-offset="2147" max-vertical-offset="8040">
+          <caret line="119" column="103" selection-start-line="119" selection-start-column="103" selection-end-line="119" selection-end-column="103" />
           <folding />
         </state>
       </provider>
