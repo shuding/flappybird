@@ -347,8 +347,8 @@ window.onload = function(){
 
             var wxCallbacks = {
                 ready : function() {
-                    //wxData["title"] = 'Flappy Bird';
-                    //wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
+                    wxData["title"] = 'Flappy Bird';
+                    wxData["desc"] = '我刚刚在 ' + ["easy", "normal", "hard"][playdata[0]] + ' 下取得 ' + playdata[1] + ' 分，你也来试试吧！';
                 },
                 cancel : function(resp) {
                 },
