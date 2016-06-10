@@ -203,13 +203,13 @@ var drawShadow = function() {
 	ctx.fillRect((width * 0.35 - 170), 0, 230, height);
 	ctx.fillStyle = "black";
 	ctx.fillRect(0, 0, (width * 0.35 - 170), height);
-	grd = ctx.createLinearGradient(width * 0.35 - 30, 0, width * 0.35 + 190, 0);
+	grd = ctx.createLinearGradient(width * 0.35 - 30, 0, Math.ceil(width * 0.35) + 191, 0);
 	grd.addColorStop(0, "rgba(0, 0, 0, 0)");
 	grd.addColorStop(1, "black");
 	ctx.fillStyle = grd;
 	ctx.fillRect((width * 0.35 - 30), 0, 220, height);
 	ctx.fillStyle = "black";
-	ctx.fillRect(width * 0.35 + 190, 0, width * 0.65 - 190, height);
+	ctx.fillRect(Math.floor(width * 0.35) + 190, 0, width * 0.65 - 190, height);
 }
 
 var drawHidden = function() {
