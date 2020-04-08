@@ -1,13 +1,13 @@
 FlappyBird
 ==========
 
-Flappy Bird game in browser. PC / Touch-screen device supported.
+Web based Flappy Bird game. PC / Touch screen supported.
 
 (2014.9.5) WeChat share API added.
 
-http://shud.in/flappybird
+https://shuding.github.io/flappybird
 
 ----
 
-Author: github.com/quietshu
-Email: ds303077135@gmail.com
+Author: github.com/shuding
+Email: g@shud.in
